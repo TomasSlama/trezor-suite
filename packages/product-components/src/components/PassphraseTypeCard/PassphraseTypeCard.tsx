@@ -13,6 +13,9 @@ import { WalletType } from './types';
 import { PassphraseTypeCardContent } from './PassphraseTypeCardContent';
 import { DOT } from './consts';
 import { borders, spacingsPx } from '@trezor/theme';
+import { useNonAsciiChars } from './useNonAsciiChars';
+import { getSubmitLabel } from './getSubmitLabel';
+import { Features } from '@trezor/connect';
 
 type WrapperProps = {
     $type: WalletType;
@@ -59,16 +62,20 @@ export type PassphraseTypeCardProps = {
     offerPassphraseOnDevice?: boolean;
     singleColModal?: boolean;
     deviceModel?: DeviceModelInternal;
+    deviceBackup?: Features['backup_type'] | null;
     onSubmit: (value: string, passphraseOnDevice?: boolean) => void;
     learnMoreTooltipOnClick?: TooltipProps['addon'];
     learnMoreTooltipAppendTo?: TooltipProps['appendTo'];
 };
+
+
 
 export const PassphraseTypeCard = (props: PassphraseTypeCardProps) => {
     const [value, setValue] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [hiddenWalletTouched, setHiddenWalletTouched] = useState(false);
     const enterPressed = useKeyPress('Enter');
+    const { nonAsciiChars, hasNonAsciiChars, showAsciiBanner } = useNonAsciiChars(value);
 
     const ref = useRef<HTMLInputElement>(null);
     const caretRef = useRef<number>(0);
@@ -83,9 +90,10 @@ export const PassphraseTypeCard = (props: PassphraseTypeCardProps) => {
         title,
         description,
         singleColModal,
-        submitLabel,
+        submitLabel: submitLabelProp,
         offerPassphraseOnDevice,
         deviceModel,
+        deviceBackup,
     } = props;
     const submit = useCallback(
         (value: string, passphraseOnDevice?: boolean) => {
@@ -93,6 +101,10 @@ export const PassphraseTypeCard = (props: PassphraseTypeCardProps) => {
         },
         [onSubmit],
     );
+
+    const isBip39 = deviceBackup === 'Bip39';
+
+    const submitLabel = getSubmitLabel({ nonAsciiChars, label: submitLabelProp });
 
     const canSubmit = (singleColModal || type === 'hidden') && !isPassphraseTooLong;
 
@@ -144,9 +156,12 @@ export const PassphraseTypeCard = (props: PassphraseTypeCardProps) => {
             <Item>
                 <PassphraseTypeCardContent
                     submitLabel={submitLabel}
+                    submitVariant={hasNonAsciiChars && !isBip39 ? 'warning' : 'primary'}
                     value={value}
                     setValue={setValue}
                     showPassword={showPassword}
+                    showAsciiBanner={showAsciiBanner}
+                    asciiBannerVariant={isBip39 ? 'info' : 'warning'}
                     setShowPassword={setShowPassword}
                     hiddenWalletTouched={hiddenWalletTouched}
                     setHiddenWalletTouched={setHiddenWalletTouched}
