@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-
-// Regular expression to match non-ASCII characters
-const nonAsciiPattern = /[^\x00-\x7F]/g;
+import { getNonAsciiChars } from '@trezor/utils';
 
 export const useNonAsciiChars = (value: string) => {
     const [nonAsciiChars, setNonAsciiChars] = useState<string[] | null>(null);
@@ -9,7 +7,7 @@ export const useNonAsciiChars = (value: string) => {
     const [showAsciiBanner, setShowAsciiBanner] = useState(false);
 
     useEffect(() => {
-        const nonAsciiChars = value.match(nonAsciiPattern);
+        const nonAsciiChars = getNonAsciiChars(value);
         const hasNonAsciiChars = Array.isArray(nonAsciiChars);
 
         setNonAsciiChars(nonAsciiChars);
