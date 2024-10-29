@@ -1,7 +1,7 @@
 import { isAndroid } from '@trezor/env-utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Card, Column, Row, Input, Button, motionAnimation, Icon, Banner } from '@trezor/components';
+import { Card, Column, Row, Input, Button, motionAnimation, Icon } from '@trezor/components';
 import { PasswordStrengthIndicator } from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
 import styled, { useTheme } from 'styled-components';
 import { spacings, spacingsPx, typography } from '@trezor/theme';
@@ -9,6 +9,7 @@ import { useKeyPress } from '@trezor/react-utils';
 import { ChangeEvent, MutableRefObject, ReactNode, RefObject } from 'react';
 import { WalletType } from './types';
 import { DOT } from './consts';
+import { NonAsciiBanner } from './NonAsciiBanner';
 
 // eslint-disable-next-line local-rules/no-override-ds-component
 const PassphraseInput = styled(Input)`
@@ -184,11 +185,7 @@ export const PassphraseTypeCardContent = ({
                         {value && !isPassphraseTooLong && (
                             <PasswordStrengthIndicator password={value} />
                         )}
-                        {showAsciiBanner && (
-                            <Banner variant={asciiBannerVariant}>
-                                TBD
-                            </Banner>
-                        )}
+                        {showAsciiBanner && <NonAsciiBanner variant={asciiBannerVariant} />}
                     </>
                 )}
 
