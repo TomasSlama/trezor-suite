@@ -2,8 +2,6 @@ import { useEffect, useState, useMemo } from 'react';
 import { getNonAsciiChars } from '@trezor/utils';
 
 export const useNonAsciiChars = (value: string) => {
-    const [nonAsciiChars, setNonAsciiChars] = useState<string[] | null>(null);
-    const [hasNonAsciiChars, setHasNonAsciiChars] = useState(false);
     const [showAsciiBanner, setShowAsciiBanner] = useState(false);
 
     useEffect(() => {
