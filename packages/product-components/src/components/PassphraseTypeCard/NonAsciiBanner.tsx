@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import styled from 'styled-components';
 import { Banner, Button, Code, Text } from '@trezor/components';
 import { borders, spacingsPx, typography } from '@trezor/theme';
+import { HELP_CENTER_PASSPHRASE_URL } from '@trezor/urls';
 
 const ButtonWrapper = styled.div`
     flex-shrink: 0;
