@@ -9,7 +9,7 @@ const StyledCode = styled.code`
     line-height: 1.5;
     font-weight: 400;
     letter-spacing: -0.4px;
-    padding: 0px ${() => spacingsPx.xxxs};
+    padding: 0 ${() => spacingsPx.xxxs};
     background-color: ${({ theme }) => theme.backgroundNeutralSubtleOnElevation1};
     box-shadow: inset 0 0 0 1px ${({ theme}) => theme.borderElevation0 };
     border-radius: ${() => borders.radii.xxs};
