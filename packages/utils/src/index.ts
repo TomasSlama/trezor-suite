@@ -49,4 +49,4 @@ export * from './bigNumber';
 export * from './throttler';
 export * from './extractUrlsFromText';
 export * from './isFullPath';
-export * from './getNonAsciiChars';
+export * from './asciiUtils';
