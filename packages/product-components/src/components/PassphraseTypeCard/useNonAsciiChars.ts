@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { getNonAsciiChars } from '@trezor/utils';
 
 export const useNonAsciiChars = (value: string) => {
