@@ -26,7 +26,6 @@ export * from './getWeakRandomId';
 export * from './getWeakRandomInt';
 export * from './hasUppercaseLetter';
 export * from './isArrayMember';
-export * from './isAscii';
 export * from './isHex';
 export * from './isNotUndefined';
 export * from './isUrl';
