@@ -15,5 +15,5 @@ export const useNonAsciiChars = (value: string) => {
         }
     }, [nonAsciiChars]);
 
-    return { nonAsciiChars, hasNonAsciiChars, showAsciiBanner };
+    return { nonAsciiChars, showAsciiBanner };
 };
