@@ -7,7 +7,7 @@ const meta: Meta = {
 } as Meta;
 
 export default meta;
-type Story = StoryObj<typeof Code>
+type Story = StoryObj<typeof Code>;
 
 export const Default: Story = {
     args: {
