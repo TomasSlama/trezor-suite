@@ -1942,7 +1942,7 @@ export default defineMessages({
         id: 'TR_NON_ASCII_CHAR',
     },
     TR_NON_ASCII_CHARS: {
-        defaultMessage: '(with non-recommended characters)',
+        defaultMessage: '{label} (with non-recommended characters)',
         id: 'TR_NON_ASCII_CHARS',
     },
     TR_CONNECT_YOUR_DEVICE: {
