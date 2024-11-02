@@ -11,7 +11,7 @@ const StyledCode = styled.code`
     letter-spacing: -0.4px;
     padding: 0 ${() => spacingsPx.xxxs};
     background-color: ${({ theme }) => theme.backgroundNeutralSubtleOnElevation1};
-    box-shadow: inset 0 0 0 1px ${({ theme}) => theme.borderElevation0 };
+    box-shadow: inset 0 0 0 1px ${({ theme }) => theme.borderElevation0};
     border-radius: ${() => borders.radii.xxs};
 `;
 
