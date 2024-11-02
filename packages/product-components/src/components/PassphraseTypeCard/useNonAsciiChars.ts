@@ -8,7 +8,8 @@ export const useNonAsciiChars = (value: string) => {
 
     console.log({ value, nonAsciiChars });
 
-        if (hasNonAsciiChars) {
+    useEffect(() => {
+        if (nonAsciiChars) {
             // If the banner was displayed once, we don't hide it again
             setShowAsciiBanner(true);
         }
