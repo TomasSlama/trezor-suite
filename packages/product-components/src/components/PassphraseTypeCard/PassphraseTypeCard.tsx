@@ -73,7 +73,7 @@ export const PassphraseTypeCard = (props: PassphraseTypeCardProps) => {
     const [showPassword, setShowPassword] = useState(false);
     const [hiddenWalletTouched, setHiddenWalletTouched] = useState(false);
     const enterPressed = useKeyPress('Enter');
-    const { nonAsciiChars, hasNonAsciiChars, showAsciiBanner } = useNonAsciiChars(value);
+    const { nonAsciiChars, showAsciiBanner } = useNonAsciiChars(value);
 
     const ref = useRef<HTMLInputElement>(null);
     const caretRef = useRef<number>(0);
