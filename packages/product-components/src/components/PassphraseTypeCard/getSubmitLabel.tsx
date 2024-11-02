@@ -17,12 +17,10 @@ export const getSubmitLabel = ({
     const defaultMessage = `{label} (with non-recommended ${chars})`;
 
     return (
-        <>
-            {label}{' '}
-            <FormattedMessage
-                id="TR_NON_ASCII_CHARS"
-                defaultMessage="(with non-recommended characters)"
-            />
-        </>
+        <FormattedMessage
+            id={messageId}
+            defaultMessage={defaultMessage}
+            values={{ char: nonAsciiChars[0], label }}
+        />
     );
 };
