@@ -51,9 +51,6 @@ type PassphraseTypeCardContentProps = {
     isPassphraseTooLong: boolean;
     value: string;
     setValue: (value: string) => void;
-    /**
-     * If true, the banner with non-ASCI chars warning will be displayed
-     */
     showAsciiBanner?: boolean;
     asciiBannerVariant?: 'info' | 'warning';
     showPassword: boolean;
