@@ -63,7 +63,7 @@ export const NonAsciiBanner = ({ variant }: Props) => {
                     <ButtonWrapper>
                         {/* TODO: better would be to reuse LearnMoreButton */}
                         <Button
-                            href="https://trezor.io/learn/a/passphrases-and-hidden-wallets#Security"
+                            href={HELP_CENTER_PASSPHRASE_URL}
                             target="_blank"
                             variant="tertiary"
                             size="tiny"
