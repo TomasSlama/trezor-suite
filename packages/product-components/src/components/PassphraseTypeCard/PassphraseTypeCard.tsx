@@ -154,7 +154,7 @@ export const PassphraseTypeCard = (props: PassphraseTypeCardProps) => {
             <Item>
                 <PassphraseTypeCardContent
                     submitLabel={submitLabel}
-                    submitVariant={hasNonAsciiChars && !isBip39 ? 'warning' : 'primary'}
+                    submitVariant={nonAsciiChars && !isBip39 ? 'warning' : 'primary'}
                     value={value}
                     setValue={setValue}
                     showPassword={showPassword}
