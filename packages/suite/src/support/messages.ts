@@ -1938,7 +1938,7 @@ export default defineMessages({
         id: 'TR_CONFIRMED_TX',
     },
     TR_NON_ASCII_CHAR: {
-        defaultMessage: '(with non-recommended \"{char}\")',
+        defaultMessage: '{label} (with non-recommended "{char}")',
         id: 'TR_NON_ASCII_CHAR',
     },
     TR_NON_ASCII_CHARS: {
