@@ -13,7 +13,7 @@ export const useNonAsciiChars = (value: string) => {
             // If the banner was displayed once, we don't hide it again
             setShowAsciiBanner(true);
         }
-    }, [value]);
+    }, [nonAsciiChars]);
 
     return { nonAsciiChars, hasNonAsciiChars, showAsciiBanner };
 };
