@@ -3,7 +3,7 @@ import React, { type ReactNode } from 'react';
 import styled from 'styled-components';
 
 const StyledCode = styled.code`
-    font-family: RobotoMono, PixelOperatorMono8, monospace;
+    font-family: RobotoMono, 'PixelOperatorMono8', monospace;
     display: inline;
     font-size: inherit;
     line-height: 1.5;
