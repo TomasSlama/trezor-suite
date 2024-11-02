@@ -4,9 +4,7 @@ import { getNonAsciiChars } from '@trezor/utils';
 export const useNonAsciiChars = (value: string) => {
     const [showAsciiBanner, setShowAsciiBanner] = useState(false);
 
-    useEffect(() => {
-        const nonAsciiChars = getNonAsciiChars(value);
-        const hasNonAsciiChars = Array.isArray(nonAsciiChars);
+    const nonAsciiChars = useMemo(() => getNonAsciiChars(value), [value]);
 
         setNonAsciiChars(nonAsciiChars);
         setHasNonAsciiChars(hasNonAsciiChars);
