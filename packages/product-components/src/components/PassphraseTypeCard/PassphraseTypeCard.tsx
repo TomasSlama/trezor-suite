@@ -68,8 +68,6 @@ export type PassphraseTypeCardProps = {
     learnMoreTooltipAppendTo?: TooltipProps['appendTo'];
 };
 
-
-
 export const PassphraseTypeCard = (props: PassphraseTypeCardProps) => {
     const [value, setValue] = useState('');
     const [showPassword, setShowPassword] = useState(false);
