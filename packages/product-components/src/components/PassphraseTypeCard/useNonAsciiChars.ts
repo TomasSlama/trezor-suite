@@ -6,8 +6,7 @@ export const useNonAsciiChars = (value: string) => {
 
     const nonAsciiChars = useMemo(() => getNonAsciiChars(value), [value]);
 
-        setNonAsciiChars(nonAsciiChars);
-        setHasNonAsciiChars(hasNonAsciiChars);
+    console.log({ value, nonAsciiChars });
 
         if (hasNonAsciiChars) {
             // If the banner was displayed once, we don't hide it again
